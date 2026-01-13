@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { ArrowLeft, Mail, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { ProductActions } from "@/components/shop/product-actions";
 
 interface ProductPageProps {
   params: Promise<{ handle: string }>;
@@ -112,13 +113,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <p className="text-sm text-gray-600">{product.storageInstructions}</p>
                 </div>
 
-                <div className="border-t border-gray-100 pt-8">
-                  <p className="text-sm text-gray-600 mb-4">
+                <div className="border-t border-gray-100 pt-8 space-y-6">
+                  <ProductActions product={product} />
+
+                  <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-gray-200" />
+                    </div>
+                    <div className="relative flex justify-center text-sm">
+                      <span className="bg-white px-4 text-gray-500">or</span>
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-gray-600">
                     For wholesale orders of 10+ blocks or to arrange delivery, please email us.
                   </p>
                   <a
                     href="mailto:hello@dartvalleyfungi.co.uk?subject=Order inquiry: {product.title}"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
+                    className="inline-flex items-center gap-2 text-primary px-6 py-3 rounded-md font-medium hover:bg-primary/5 transition-colors"
                   >
                     <Mail className="h-4 w-4" />
                     Order by Email

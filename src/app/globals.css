@@ -16,6 +16,8 @@
   --color-border: #e5e5e5;
   --color-card: #ffffff;
   --color-card-foreground: #1a1a1a;
+  --color-forest-50: #f0f5f1;
+  --color-forest: #2d4f3c;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
